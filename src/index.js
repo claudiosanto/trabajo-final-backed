@@ -1,5 +1,5 @@
 import express from "express"
-import config from "../src/config.js";
+import config from "./config.js";
 import usersRouters from "./api/routes/users.routes.js";
 
 
@@ -10,7 +10,7 @@ import usersRouters from "./api/routes/users.routes.js";
  
 
 
-const app = express();
+const app = express(); 
 app.use(express.json())
 
 
