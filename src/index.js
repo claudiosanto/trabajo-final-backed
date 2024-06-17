@@ -1,22 +1,21 @@
 import express from "express"
 import config from "../src/config.js";
-import { getAllUsers } from "./api/users.controllers/users.controllers.js";
+import usersRouters from "./api/routes/users.routes.js";
 
 
 
 
+
+
+ 
 
 
 const app = express();
 app.use(express.json())
 
 
-app.use("api/users", getAllUsers)
+app.use("/api/users",usersRouters)
 
-app.get("/", (req, res) => {
-  res.send("HOLA ")
-
-})
 
 
 
