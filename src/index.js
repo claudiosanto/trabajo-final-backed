@@ -12,10 +12,9 @@ app.set('views', './src/views');
 
 app.use(express.json())
 app.use("/",viewRouter)
-
-
+app.use("api/users/id",usersRouters)
 app.use("/api/users",usersRouters)
-
+app.use("/api/user/createUser",usersRouters)
 
 
 
