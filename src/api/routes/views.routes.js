@@ -1,8 +1,8 @@
 import { Router } from "express"
-import {  home } from "../controllers/views.controllers.js"
+import {  about, home } from "../controllers/views.controllers.js"
 const router = new Router()
 
-router.get('/', home)
-
+router.get('/home', home)
+router.get('/about', about)
 
 export default router; 
