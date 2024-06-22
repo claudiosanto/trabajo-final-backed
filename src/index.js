@@ -12,8 +12,8 @@ app.set('views', '../src/views')
 app.use(express.json())
 app.set(express.static('public'))
 
-app.use("/home", viewrouter)
-app.use("/about", viewrouter)
+app.use('/home', viewrouter)
+
 
 app.use("api/users/id",usersRouters)
 app.use("/api/users",usersRouters)
