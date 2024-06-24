@@ -30,5 +30,5 @@ export const totalUsers = (req, res) => {
       title: ' users',
       usuarios:usuarios
     }
-    res.render('totalUsers', datos)
+    res.render('users', datos)
   }
