@@ -15,7 +15,7 @@ export const home = (req, res) => {
     res.render('about', datos)
   }
 
-export const users = (req, res) => {
+export const totalUsers = (req, res) => {
   console.log(users)
   const usuarios = users.map(existUser=> {
     return {
@@ -30,5 +30,5 @@ export const users = (req, res) => {
       title: ' users',
       usuarios:usuarios
     }
-    res.render('users', datos)
+    res.render('totalUsers', datos)
   }
