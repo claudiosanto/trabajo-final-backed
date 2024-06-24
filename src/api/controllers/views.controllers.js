@@ -19,7 +19,7 @@ export const users = (req, res) => {
   console.log(users)
   const usuarios = users.map(existUser=> {
     return {
-    name:xistUser.name,
+    name:existUser.name,
       id: existUser.id,
    email:existUser.email
   }
