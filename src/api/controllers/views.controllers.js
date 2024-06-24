@@ -1,3 +1,4 @@
+import { users } from "../db/users.js";
 
 
 export const home = (req, res) => {
