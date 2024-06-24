@@ -16,18 +16,19 @@ export const home = (req, res) => {
   }
 
 export const users = (req, res) => {
-  const usuarios = users.map(users=> {
+  console.log(users)
+  const usuarios = users.map(existUser=> {
     return {
-    name:users.name,
-      id: users.id,
-   email:users.email
+    name:xistUser.name,
+      id: existUser.id,
+   email:existUser.email
   }
   
   })  
   
   const datos = {
       title: ' users',
-      users:usuarios
+      usuarios:usuarios
     }
     res.render('users', datos)
   }
