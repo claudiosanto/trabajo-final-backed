@@ -1,10 +1,10 @@
-import { users } from "../db/users.js";
+import {users} from '../db/users.js'
 
 
 export const home = (req, res) => {
   const datos = {
     title: 'home',
-    users: 'Alice'
+    users:'Charlie'
   }
    res.render('home', datos)
 };
@@ -26,7 +26,6 @@ export const totalUsers = (req, res) => {
   }
   
   })  
-  
   const datos = {
       title: ' users',
       usuarios:usuarios
