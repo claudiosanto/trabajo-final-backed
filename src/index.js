@@ -14,7 +14,7 @@ app.use(express.static('public'))
 
 app.use('/', viewrouter)
 app.use('/', viewrouter)
-
+app.use('/', viewrouter)
 app.use("api/users/id",usersRouters)
 app.use("/api/users",usersRouters)
 app.use("/api/user/createUser",usersRouters)
