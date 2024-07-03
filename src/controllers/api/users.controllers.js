@@ -1,7 +1,7 @@
 import { users } from '../db/users.js'
 
 export const getAllUsers = (req, res) => {
-  console.log(users)
+
   return res.status(200).json(users)
 };
 export const getByid = (req, res) => {
