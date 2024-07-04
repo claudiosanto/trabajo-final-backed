@@ -2,8 +2,8 @@ import express from 'express'
 import config from "./config.js";
 import { engine } from 'express-handlebars'
 import cors from 'cors'
-import usersRouters from '../src/routes/users.routes.js'
-
+import viewrouter from './routes/views.routes.js'
+import usersRouters from './routes/api/users.routes.js'
 const app = express();
 app.use(cors())
 //configuracion de motor de plantilla
@@ -19,8 +19,9 @@ app.set('views', './src/views')
 app.use(express.json())
 app.use(express.static('public'))
 
-app.use("/api/users", usersRouters)
+app.use('api/users', usersRouters)
 
 app.use('/users', viewrouter)
+
 app.listen(config.port, () => console.log(`escuhando al puerto http://localhost:${config.port}`))
 
