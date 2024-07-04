@@ -9,8 +9,8 @@ app.use(cors())
 //configuracion de motor de plantilla
 app.engine('handlebars', engine({
   defaultLayout: 'main',
-  layoutsDir: './src/views/layouts',
-  partialsDir: '../src/views/partials'
+  layoutsDir: './src/views.layouts ',
+  partialsDir: '.src/views/partials'
 }))
 app.set('view engine', 'handlebars')
 app.set('views', './src/views')
@@ -19,7 +19,7 @@ app.set('views', './src/views')
 app.use(express.json())
 app.use(express.static('public'))
 
-app.use('api/users', usersRouters)
+app.use('/api/users', usersRouters)
 
 app.use('/users', viewrouter)
 

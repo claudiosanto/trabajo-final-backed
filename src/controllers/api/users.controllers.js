@@ -23,3 +23,7 @@ export const createUsers = (req, res) => {
   users.push(body)
   res.status(200).json("usuario creado")
 }
+const userspartial = (() => {
+
+
+})
