@@ -11,7 +11,7 @@ app.use(cors())
 //configuracion de motor de plantilla
 app.engine('handlebars', engine({
   defaultLayout: 'main',
-  layoutsDir: './src/views.layouts ',
+  layoutsDir: './src/views/layouts ',
   partialsDir: '.src/views/partials'
 }))
 app.set('view engine', 'handlebars')
