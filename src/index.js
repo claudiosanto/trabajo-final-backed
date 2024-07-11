@@ -4,7 +4,9 @@ import { engine } from 'express-handlebars'
 import cors from 'cors'
 import viewrouter from './routes/views.routes.js'
 import usersRouters from './routes/api/users.routes.js'
+import connectToDB from './connect.js';
 const app = express();
+connectToDB()
 app.use(cors())
 //configuracion de motor de plantilla
 app.engine('handlebars', engine({
@@ -22,6 +24,7 @@ app.use(express.static('public'))
 app.use('/api/users', usersRouters)
 
 app.use('/users', viewrouter)
+
 
 app.listen(config.port, () => console.log(`escuhando al puerto http://localhost:${config.port}`))
 
