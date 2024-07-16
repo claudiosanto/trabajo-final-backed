@@ -1,17 +1,16 @@
 import mongoose from "mongoose";
-import config from "./config";
+import config from "./config.js";
 
-export default async function connectDb() {
+export default async function conectDb() {
 
   try {
     await mongoose.connect(config.MONGO_DB_URI)
-    console.log("conectado a MONGO_DB)ATLAS")
+    console.log('conect a mongoDbAtlas')
   } catch (error) {
-    console.error("no se pudo conectar la base de datos")
+    console.error('no se conecto ala base', error)
   }
 
 
 }
-
 
 //conecta la base de datos 

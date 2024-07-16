@@ -15,20 +15,22 @@ const productSchema = new mongoose.Schema({
 
   lote: {
     type: string,
-    default: '1000'
-
+    default: '100'
   },
   caducidad: {
     type: Date,
     default: Date.now
 
   },
-  descriptions: string,
-  categoria: {
-    type: string,
+  descriptions: {
+    string,
+    categoria: {
+      type: string,
 
-    default: null
-  }
+      default: null
+    }
+
+  },
 });
 //crear el modelo
 const product = mongoose.model('product', productSchema)

@@ -5,6 +5,7 @@ import cors from 'cors'
 import viewrouter from './routes/views.routes.js'
 import usersRouters from './routes/api/users.routes.js'
 import connectToDB from './connect.js';
+import route from './routes/api/products.routes.js';
 const app = express();
 connectToDB()
 app.use(cors())
@@ -22,7 +23,7 @@ app.use(express.json())
 app.use(express.static('public'))
 
 app.use('/api/users', usersRouters)
-
+app.use('/api/products', route)
 app.use('/users', viewrouter)
 
 
