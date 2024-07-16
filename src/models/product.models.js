@@ -14,7 +14,7 @@ const productSchema = new mongoose.Schema({
   },
 
   lote: {
-    type: string,
+    type: String,
     default: '100'
   },
   caducidad: {
@@ -23,9 +23,9 @@ const productSchema = new mongoose.Schema({
 
   },
   descriptions: {
-    string,
+    String,
     categoria: {
-      type: string,
+      type: String,
 
       default: null
     }

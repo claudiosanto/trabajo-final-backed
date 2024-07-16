@@ -27,5 +27,5 @@ app.use('/api/products', route)
 app.use('/users', viewrouter)
 
 
-app.listen(config.port, () => console.log(`escuhando al puerto http://localhost:${config.port}`))
+app.listen(config.PORT, () => console.log(`escuhando al puerto http://localhost:${config.PORT}`))
 
