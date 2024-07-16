@@ -6,4 +6,4 @@ const route = Router()
 route.post('/', createProductsControllers)
 
 route.get('/', getProducts)
-export default route;
+export default route; 
