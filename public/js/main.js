@@ -1,5 +1,4 @@
-
-console.log("hola perro");
+import { getProducts } from "../../src/controllers/products.controllers"
 
 const boton = document.createElement('button')
 boton.textContent = "mi boton"
@@ -10,3 +9,7 @@ boton.addEventListener('click', () => {
     .then(user => console.log(user))
 })
 
+export async function main() {
+  const result = await getProducts()
+  productosHTML(result.payload)
+}
