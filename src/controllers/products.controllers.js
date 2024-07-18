@@ -13,7 +13,7 @@ export const createProductsControllers = async (req, res) => {
 
 export const getProducts = async (req, res) => {
   try {
-    const products = await productService.getProduct()
+    const products = await productService.getProducts()
     if (products.lenght === 0) return res.status(404).json({ status: 404, messege: "producto no encontrado" })
 
     return res.status(200).json({ status: 200, message: `cantida de productos:${products.length}`, payload: getProducts })

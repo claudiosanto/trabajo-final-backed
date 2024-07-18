@@ -22,13 +22,19 @@ const productSchema = new mongoose.Schema({
     default: Date.now
 
   },
-  descriptions: {
+  descripcion: {
     String,
     categoria: {
       type: String,
 
       default: null
+    },
+
+    precio: {
+      type: String
     }
+
+
 
   },
 });
