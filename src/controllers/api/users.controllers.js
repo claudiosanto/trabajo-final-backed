@@ -1,29 +1,15 @@
-import { users } from "../../db/users.js";
+import UsersService from '../../service/users.service.js'
 
-export const getAllUsers = (req, res) => {
+export const createUsersControllers = async (req, res) => {
+  try {
 
-  return res.status(200).json(users)
-};
-export const getByid = (req, res) => {
-  const id = req.params.id
-  console.log(id)
-  const existid = users.find(userId => userId.id === Number(id))
-  if (!existid) {
-    res.status(404).json('id no encotrado')
+
+
+
+  } catch (error) {
+
   }
-  res.status(200).json(existid)
+
+
 
 }
-export const createUsers = (req, res) => {
-  const body = req.body
-  const limitUsers = users.find(limitUser => limitUser.name === body.name)
-  if (limitUsers) {
-    res.status(400).json({ producto: body, menssage: "usuario ya existe" })
-  }
-  users.push(body)
-  res.status(200).json("usuario creado")
-}
-const userspartial = (() => {
-
-
-})

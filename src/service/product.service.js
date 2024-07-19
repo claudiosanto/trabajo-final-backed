@@ -1,14 +1,13 @@
-import product from "../models/product.models.js";
+import Product from "../models/product.models.js";
 const productService = {
-  createProduct: async function (product) {
-    return await product.create(products)
+  createProduct: async function (products) {
+    return await Product.create(products)
 
   },
 
   getProducts: async function () {
-    return await product.find()
+    return await Product.find()
   }
 
 }
 export default productService;
-

@@ -18,26 +18,24 @@ const productSchema = new mongoose.Schema({
     default: '100'
   },
   caducidad: {
-    type: Date,
+    type: String,
     default: Date.now
 
   },
   descripcion: {
     String,
-    categoria: {
-      type: String,
-
-      default: null
-    },
-
-    precio: {
-      type: String
-    }
-
-
 
   },
-});
+
+  categoria: {
+    type: String,
+    default: null
+  },
+  precio: {
+    type: String
+  },
+
+})
 //crear el modelo
-const product = mongoose.model('product', productSchema)
-export default product;
+const Product = mongoose.model('Product', productSchema)
+export default Product;
