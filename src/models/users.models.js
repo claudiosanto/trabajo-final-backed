@@ -14,28 +14,35 @@ const usersschema = new mongoose.Schema({
 
   contraseña: {
     type: String,
-    required: true
+
   },
   edad: {
     type: String,
     required: false
   },
+  apellido: {
+    type: String,
+    required: false
+  },
   fechaRegistro: {
-    type: date,
-    default: date.now
+    type: String
   },
   direccion: {
     calle: String,
     estado: String,
     codigopostal: String
   },
-  carrito: [
-    type = objectId
-  ]
+  carrito: {
+    type: [
+
+    ]
+  }
+
+
 
 });
-const Users = mongoose.model('users', usersschema)
-export default Users;
+const users = mongoose.model('users', usersschema)
+export default users;
 
 
 

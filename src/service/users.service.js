@@ -1,19 +1,23 @@
-import Users from '../models/users.models.js'
-//objeto burrito 
+import users from "../models/users.models.js";
+
+
 const UsersService = {
-  //metodos
-  createUsers: async function (users) {
-    return await Users.create()
-  },
-  getAllUsers: async function (users) {
-    return await Users.create(users)
-  },
 
-  getByid: async function (users) {
-    return await Users.find(users)
+  createUsers: async function (usersData) {
+    return await users.create(usersData)
   },
-
-
+  getAllUsers: async function () {
+    return await users.find()
+  },
+  getUserById: async function (id) {
+    return await users.findById(id)
+  },
+  updateUser: async function (id, usersData) {
+    return await users.findByIdAndUpdate(id, usersData)
+  },
+  deleteUsers: async function (id) {
+    return await users.findByIdAndDelete(id)
+  }
 
 }
 export default UsersService;
