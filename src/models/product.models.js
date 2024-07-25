@@ -35,6 +35,7 @@ const productSchema = new mongoose.Schema({
     type: String
   },
 
+
 })
 //crear el modelo
 const Product = mongoose.model('Product', productSchema)

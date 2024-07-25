@@ -28,7 +28,7 @@ export const GetProductById = async (req, res) => {
   try {
 
     const Product = await productService.GetProductById(productId)
-
+    console.log(product)
     return res.status(200).json({ message: "producto encontrado", Product })
 
   } catch (error) {
@@ -39,7 +39,7 @@ export const GetProductById = async (req, res) => {
 export const DeleteProduct = async (req, res) => {
   try {
 
-    const DeleteProduct = await productService.DeleteProduct(id)
+    const DeleteProduct = await productService.DeleteProduct(ProductId)
 
     return res.status(200).json({ message: "producto eliminado", DeleteProduct })
   } catch (error) {

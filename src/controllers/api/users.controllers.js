@@ -30,7 +30,7 @@ export const getAllUsers = async (req, res) => {
 export const getUserById = async (req, res) => {
   const usersId = req.params.id
   try {
-    const getId = await productService.getUserById(usersId)
+    const getId = await UsersService.getUserById(usersId)
     return res.status(200).json({ getId })
   } catch (error) {
     return res.status(500).json({ message: error.message })
@@ -42,12 +42,12 @@ export const getUserById = async (req, res) => {
 
 
 export const updateUser = async (req, res) => {
-  const updateId = await productService.updateUser(id, usersData)
+  const updateId = await UsersService.updateUser(id, usersData)
   return res.status(200).json({ message: `se elimino el usuario`, updateId })
 
 }
 
 export const deleteUsers = async (req, res) => {
-  const deleteId = await productService.deleteUsers(id)
+  const deleteId = awaitUsersService.deleteUsers(id)
   return res.status(200).json({ message: `todos los usuarios han sido eliminados`, deleteId })
 }
