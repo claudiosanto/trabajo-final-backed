@@ -1,5 +1,4 @@
 
-import { json } from 'express';
 import productService from '../service/product.service.js'
 
 export const createProductsControllers = async (req, res) => {
@@ -28,9 +27,9 @@ export const GetProductById = async (req, res) => {
   const productId = req.params.id;
   try {
 
-    const Product = await productService.GetProductById()
+    const Product = await productService.GetProductById(productId)
 
-    return res.status(200).json({ message: "producto encontrado" })
+    return res.status(200).json({ message: "producto encontrado", Product })
 
   } catch (error) {
     return res.status(500).json({ status: 500, message: error.message })
@@ -39,10 +38,10 @@ export const GetProductById = async (req, res) => {
 
 export const DeleteProduct = async (req, res) => {
   try {
-    const { id } = req.query;
-    const DeleteProduct = await productService.DeleteProduct()
 
-    return res.status(200).json({ message: "producto eliminado" })
+    const DeleteProduct = await productService.DeleteProduct(id)
+
+    return res.status(200).json({ message: "producto eliminado", DeleteProduct })
   } catch (error) {
     return res.status(500).json({ message: error.message })
   }
@@ -50,5 +49,5 @@ export const DeleteProduct = async (req, res) => {
 }
 
 export const updateProduct = async (req, res) => {
-  return
+  const updateP = await productService.updateProduct(id, productsData)
 }

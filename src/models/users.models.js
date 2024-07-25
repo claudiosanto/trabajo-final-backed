@@ -32,6 +32,10 @@ const usersschema = new mongoose.Schema({
     estado: String,
     codigopostal: String
   },
+  createdAt: {
+    type: Date,
+    default: Date.now
+  },
   carrito: {
     type: [
 
