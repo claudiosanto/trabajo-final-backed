@@ -18,9 +18,10 @@ export const CreateUsersControllers = async (req, res) => {
 export const getAllUsers = async (req, res) => {
   try {
     const users = await UsersService.getAllUsers()
-    if (!users) return res.status(404).json({ status: 404, message: "usuarios no encontrados" })
+    console.log(users)
+    if (!users) return res.status(404).json({ status: 404, message: "usuarios no encontrados", })
 
-    res.status(200).json({ users, status: 200, message: `usuarios encontrados:`, users })
+    res.status(200).json({ users, status: 200, message: `usuarios encontrados:`, payload: users })
   } catch (error) {
     return res.status(500).json({ status: (500), message: error.message })
   }

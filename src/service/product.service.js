@@ -1,26 +1,27 @@
 import Product from "../models/product.models.js";
 const productService = {
-  createProduct: async function (productsData) {
-    return await Product.create(productsData)
+  createProduct: async function (productData) {
+    return await Product.create(productData)//parametro
 
   },
 
   getProducts: async function () {
     return await Product.find()
-  },
-  GetProductById: async function (ProductId) {
-    return await Product.findById(ProductId)
 
   },
-  updateProduct: async function (id, ProductId) {
-    return await Product.findByIdAndUpdate(id, ProductId)
+  getProductById: async function (id) {
+    return await Product.findById(id)
+
   },
-  DeleteProduct: async function (ProductId) {
-    try {
-      return await Product.findByIdAndDelete(ProductId)
-    } catch (error) {
-      return res.status(200).json({ message: "producto eliminado" })
-    }
+  updateProduct: async function (id, productData) {
+    return await Product.findByIdAndUpdate(id, productData)
+  },
+  deleteProduct: async function (id) {
+    return await Product.findByIdAndDelete(id)
+  },
+  getProductBynombre: async function (nombreParams) {
+    return await Product.findOne({ nombre: nombreParams })
   }
 }
+
 export default productService;
