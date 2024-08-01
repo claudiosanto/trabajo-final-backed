@@ -29,7 +29,8 @@ const productSchema = new mongoose.Schema({
 
   categoria: {
     type: String,
-    default: null
+    requered: true
+
   },
   precio: {
     type: String
