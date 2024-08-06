@@ -11,5 +11,5 @@ route.get('/', getProducts)
 route.get('/nombre', getProductByNombre)
 route.get("/:id", getProductById)
 route.delete("/:id", deleteProduct)
-route.get('/nombre', getProductByNombre)
+
 export default route;
