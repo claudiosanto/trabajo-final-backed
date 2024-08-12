@@ -25,10 +25,17 @@ export const totalUsers = (req, res) => {
       email: existUser.email
     }
 
+
   })
   const datos = {
     title: ' users',
     usuarios: usuarios
   }
   res.render('users', datos)
+}
+
+export const dashboard = (req, res) => {
+
+
+  res.render('dashboard')
 }
