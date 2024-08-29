@@ -1,3 +1,4 @@
+import { users } from "../db/users.js";
 
 
 
@@ -17,22 +18,23 @@ export const about = (req, res) => {
 }
 
 export const totalUsers = (req, res) => {
-  console.log(users)
-  const usuarios = users.map(existUser => {
+  const usuarios = users.map(us => {
     return {
-      name: existUser.name,
-      id: existUser.id,
-      email: existUser.email
+      nombre: us.nombre,
+      contraseña: us.contraseña,
+      apellido: us.apellido
     }
-
-
   })
+
   const datos = {
-    title: ' users',
+    title: 'users',
     usuarios: usuarios
   }
+
   res.render('users', datos)
+
 }
+
 
 export const dashboard = (req, res) => {
 

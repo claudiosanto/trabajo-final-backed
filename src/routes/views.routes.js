@@ -1,5 +1,5 @@
 import { Router } from "express"
-import { about, dashboard, home, totalUsers } from '../controllers/views.controllers.js'
+import { about, dashboard, home, totalUsers, } from '../controllers/views.controllers.js'
 
 const router = new Router()
 

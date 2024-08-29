@@ -4,8 +4,16 @@ import { productosHtml } from "./products.js"
 
 
 async function main() {
-  const result = await getProducts()
-  productosHtml(result.payload)
+  try {
+    const result = await getProducts()
+    console.log(result)
+
+    productosHtml(result.payload);
+
+
+  } catch (error) {
+    console.error('Error al obtener productos:', error);
+  }
 }
 main()
 

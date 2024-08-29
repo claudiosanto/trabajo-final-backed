@@ -7,6 +7,7 @@ import usersRouters from './routes/api/users.routes.js'
 import connectToDB from './connect.js';
 import route from './routes/api/products.routes.js';
 
+
 const app = express();
 connectToDB()
 app.use(cors())
@@ -29,4 +30,3 @@ app.use('/', viewrouter)
 
 
 app.listen(config.PORT, () => console.log(`escuhando al puerto http://localhost:${config.PORT}`))
-

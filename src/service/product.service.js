@@ -19,7 +19,7 @@ const productService = {
   deleteProduct: async function (id) {
     return await Product.findByIdAndDelete(id)
   },
-  getProductBynombre: async function (nombreParams) {
+  getProductByNombre: async function (nombreParams) {
     return await Product.findOne({ nombre: nombreParams })
   }
 }
