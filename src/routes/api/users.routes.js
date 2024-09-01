@@ -7,6 +7,6 @@ usersRouters.post("/", CreateUsersControllers)
 usersRouters.get('/:id', getUserById)
 usersRouters.get("/", getAllUsers)
 usersRouters.get('/updateUser', updateUser)
-usersRouters.get('/deleteUsers', deleteUsers)
+usersRouters.delete('/deleteUsers', deleteUsers)
 export default usersRouters
 

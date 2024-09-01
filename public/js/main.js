@@ -1,5 +1,5 @@
 import { getProducts } from "./api.js"
-import { productosHtml } from "./products.js"
+import { createProduct, productosHtml } from "./products.js"
 
 
 
@@ -9,7 +9,7 @@ async function main() {
     console.log(result)
 
     productosHtml(result.payload);
-
+    createProduct()
 
   } catch (error) {
     console.error('Error al obtener productos:', error);
