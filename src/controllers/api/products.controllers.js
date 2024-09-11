@@ -67,6 +67,18 @@ export const getProductById = async (req, res) => {
 
 }
 
+export const removeProducts = async (req, res) => {
+  try {
+    const eliminar = await productService.delete()
+    return res.status(200).json({ message: 'productos eliminados', eliminar })
+    console.log(eliminar)
+  } catch (error) {
+    console.log({ message: 'productos eliminados', error })
+    res.status(500).json({ message: "error al eliminar productos" });
+  }
+
+
+}
 
 export const deleteProduct = async (req, res) => {
   try {
@@ -89,26 +101,29 @@ export const updateProduct = async (req, res) => {
 export const getProductByNombre = async (req, res) => {
 
   try {
-    const { nombre } = req.query
-    console.log(nombre)
+    let { nombre } = req.query
+    nombre = decodeURIComponent(nombre);
     const productNombre = await productService.getProductByNombre(nombre)
-    console.log(productNombre)
     if (!productNombre) {
-      res.status(404).json({ status: 404, message: "el producto no encontrado" })
+      return res.status(404).json({ status: 404, message: "producto no encontrado" });
     }
+    console.log(productNombre)
     const product = {
-      nombre: productNombre.nombre,
       id: productNombre._id,
+      nombre: productNombre.nombre,
       lote: productNombre.lote,
+      caducidad: productNombre.caducidad,
+      stock: productNombre.stock,
+      img: productNombre.img,
       precio: productNombre.precio,
-      img: productNombre.img
+      descripcion: productNombre.descripcion,
+
     }
-    console.log(productNombre.nombre);
 
     return res.status(200).json({
       message: "producto encontrado", payload: product
     })
-    console.log(product)
+
 
   } catch (error) {
     console.log("error en getProductByNombre ", error)

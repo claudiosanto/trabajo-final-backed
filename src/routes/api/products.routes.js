@@ -1,5 +1,5 @@
 import { Router } from 'express'
-import { createProductsControllers, deleteProduct, getProductById, getProductByNombre, getProducts } from '../../controllers/api/products.controllers.js'
+import { createProductsControllers, deleteProduct, getProductById, getProductByNombre, getProducts, removeProducts } from '../../controllers/api/products.controllers.js'
 
 
 
@@ -11,5 +11,5 @@ route.get('/', getProducts)
 route.get('/nombre', getProductByNombre)
 route.get("/:id", getProductById)
 route.delete("/:id", deleteProduct)
-
+route.delete('/', removeProducts)
 export default route;

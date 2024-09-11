@@ -19,9 +19,14 @@ const productService = {
   deleteProduct: async function (id) {
     return await Product.findByIdAndDelete(id)
   },
-  getProductByNombre: async function (nombreParams) {
-    return await Product.findOne({ nombre: nombreParams })
+  getProductByNombre: async function (nombre) {
+    return await Product.findOne({ nombre: nombre })
+  },
+
+  delete: async function ({ }) {
+    return await Product.deleteMany({})
   }
 }
+
 
 export default productService;
