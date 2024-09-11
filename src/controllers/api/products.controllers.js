@@ -103,18 +103,18 @@ export const getProductByNombre = async (req, res) => {
   try {
     let { nombre } = req.query
     nombre = decodeURIComponent(nombre);
+    console.log(nombre)
     const productNombre = await productService.getProductByNombre(nombre)
     if (!productNombre) {
       return res.status(404).json({ status: 404, message: "producto no encontrado" });
     }
     console.log(productNombre)
     const product = {
-      id: productNombre._id,
+      _id: productNombre._id,
       nombre: productNombre.nombre,
       lote: productNombre.lote,
       caducidad: productNombre.caducidad,
       stock: productNombre.stock,
-      img: productNombre.img,
       precio: productNombre.precio,
       descripcion: productNombre.descripcion,
 
