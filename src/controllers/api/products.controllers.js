@@ -101,6 +101,7 @@ export const updateProduct = async (req, res) => {
 export const getProductByNombre = async (req, res) => {
 
   try {
+
     let { nombre } = req.query
     nombre = decodeURIComponent(nombre);
     console.log(nombre)

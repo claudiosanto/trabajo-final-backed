@@ -14,7 +14,7 @@ const productService = {
 
   },
   updateProduct: async function (id, productData) {
-    return await Product.findByIdAndUpdate(id, productData)
+    return await Product.findByIdAndUpdate(id, productData, { new: true })
   },
   deleteProduct: async function (id) {
     return await Product.findByIdAndDelete(id)
