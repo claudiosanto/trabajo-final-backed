@@ -9,8 +9,8 @@ const productService = {
     return await Product.find()
 
   },
-  getProductById: async function (id) {
-    return await Product.findById(id)
+  getProductById: async function (_id) {
+    return await Product.findById(_id)
 
   },
   updateProduct: async function (id, productData) {

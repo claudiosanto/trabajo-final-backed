@@ -1,5 +1,5 @@
 import { Router } from 'express'
-import { createProductsControllers, deleteProduct, getProductById, getProductByNombre, getProducts, removeProducts } from '../../controllers/api/products.controllers.js'
+import { createProductsControllers, deleteProduct, getProductById, getProducts, removeProducts } from '../../controllers/api/products.controllers.js'
 
 
 

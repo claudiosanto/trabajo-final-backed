@@ -47,9 +47,9 @@ export const getProducts = async (req, res) => {
 export const getProductById = async (req, res) => {
 
   try {
-    const { id } = req.params
+    const { _id } = req.params
 
-    const product = await productService.getProductById(id)
+    const product = await productService.getProductById(_id)
     const producto = {
       nombre: product.nombre,
       precio: product.precio,
