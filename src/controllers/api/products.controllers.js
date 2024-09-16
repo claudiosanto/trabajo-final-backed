@@ -26,7 +26,8 @@ export const getProducts = async (req, res) => {
         stock: prod.stock,
         caducidad: prod.caducidad,
         categoria: prod.categoria,
-        precio: prod.precio
+        precio: prod.precio,
+        lote: prod.lote
       }
 
     })
@@ -60,7 +61,8 @@ export const getProductById = async (req, res) => {
       lote: product.lote,
       caducidad: product.caducidad,
       stock: product.stock,
-      img: product.img
+      categoria: product.categoria,
+
     }
     console.log('producto encontrado', producto)
     return res.status(200).json({ message: "producto encontrado", payload: producto })
@@ -137,3 +139,5 @@ export const getProductByNombre = async (req, res) => {
   }
 
 }
+
+
